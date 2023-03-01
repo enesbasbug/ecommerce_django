@@ -1,0 +1,37 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="container">
+       <a href="{% url 'home' %}" class="navbar-brand">FREE AMAZON</a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target = "#navbar">
+        <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbar">
+            {% comment %} me = margin end, to the left {% endcomment %}
+            <ul class="navbar-nav me-auto"> 
+                <li class="nav-item">
+                    <a href="{% url 'home' %}" class="nav-link">Homepage</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+                </li>
+            </ul>    
+            {% comment %} me = margin start, to the right {% endcomment %}
+            <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Welcome, {{ user.get_full_name|title }}</a>
+                        </li>
+                {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'login' %}" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'register' %}" class="nav-link">Register</a>
+                        </li>
+                    {% endif %}
+            </ul>    
+       </div>
+    </div>
+</nav>

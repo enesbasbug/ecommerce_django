@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog Details
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row"> 
+        
+        <div class="col-12">
+            
+            <div class="card mb-3">
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h1 class="card-title h3">
+                                {{ blog.title|title }}
+                            </h1>
+                            <img src="{{blog.image.url}}" alt="" class="img-fluid" width="450" style="float:left; margin-top: 20px; margin-right: 35px; margin-bottom: 20px;"> 
+                            <!-- <p class="card-text">{{ blog.description }}</p> -->
+
+                            <p class="card-text">{{ blog.description|safe }}</p> 
+                            <!-- after we insert text from other sources to prevent writing their html commands like <h2>.. 
+                                , we added safe filter to display the description text as we see on the admin page, while copying and pasting.    
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

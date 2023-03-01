@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock %}
+
+
+
+{% block title %}
+    Blogs
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row"> 
+        <div class="col-3">
+            {% include 'partials/_categories.html' %}
+        </div>
+        <div class="col-9">
+            <h1>All Blogs</h1>
+            <br>
+            {% comment %} blogs|length>0 threw and error; it has to be written as length > 0 with whitespaces, as shown below {% endcomment %}
+            {% if blogs|length > 0   %} {% comment %}  checking if the category have any blogs related to it. {% endcomment %}
+                {% for b in blogs %}
+                    {% if b.is_active == True %}
+                        {% include 'blog/partials/_blog.html' %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-warning"> There is no blogs related to the selected category </div> 
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

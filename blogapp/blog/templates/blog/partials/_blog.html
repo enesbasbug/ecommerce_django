@@ -1,0 +1,24 @@
+
+{% load static %}
+
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-3">
+            {% comment %} <img src="{% static 'img/'|add:b.image  %}" alt="" class="img-fluid"> {% endcomment %}
+            <img src="{{b.image.url }}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{% url 'blog_details' b.slug %}">
+                        {{ b.title|title }}
+                    </a>
+                </h5>
+                <p class="card-text">{{ b.description|striptags|slice:"0:75"}}</p>
+                {% comment %} <p class="card-text">{{ b.description|safe|slice:"0:75"}}</p>  {% endcomment %}
+                {% comment %} just wanted to try safe and slice together but it didnt look like I assumed, striptags
+                 and slice work together better {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div> 

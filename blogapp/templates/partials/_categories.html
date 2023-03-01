@@ -1,0 +1,11 @@
+
+<div class="list-group">
+    {% for category in categories  %}
+        {% if category.slug == selected_category %} {% comment %} to shown selected category on the page on the left, as active category selected. We added 'active' parameters to the class below at the end to display it. {% endcomment %}
+            <a href="{% url 'blogs_by_category' category.slug %}" class="list-group-item list-group-item-action active"> {{ category.name|title }} </a> 
+            {% comment %} title filter converting a string into titlecase by making words start with an uppercase character and the remaining characters lowercase. {% endcomment %}
+        {% else %}
+            <a href="{% url 'blogs_by_category' category.slug %}" class="list-group-item list-group-item-action"> {{ category.name|title }} </a> 
+        {% endif %}
+    {% endfor %}
+</div>
