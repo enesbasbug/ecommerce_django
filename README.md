@@ -9,4 +9,4 @@ You may also access **http://127.0.0.1:8000/admin** page and you can use usernam
 
 <img src="img/hp1.png" width="800">
 <img src="img/hp2.png" width="800">
-<img src="img/admin.png" width="800">
+<img src="img/admin.png" width="900">
