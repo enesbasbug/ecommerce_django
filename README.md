@@ -1,5 +1,7 @@
 # ecommerce_django
 
+# Live Link : http://djangoawsec-env.eba-ekd3hrdt.us-east-2.elasticbeanstalk.com/
+
 After clone the repo, install the packages required.
 <code>$ pip install -r requirements.txt
 </code>
