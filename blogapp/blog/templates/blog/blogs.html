@@ -8,7 +8,7 @@
 
 
 {% block title %}
-    Blogs
+    E-commerce
 {% endblock %}
 
 
@@ -22,7 +22,7 @@
             {% include 'partials/_categories.html' %}
         </div>
         <div class="col-9">
-            <h1>All Blogs</h1>
+            <h1>All Items</h1>
             <br>
             {% comment %} blogs|length>0 threw and error; it has to be written as length > 0 with whitespaces, as shown below {% endcomment %}
             {% if blogs|length > 0   %} {% comment %}  checking if the category have any blogs related to it. {% endcomment %}
